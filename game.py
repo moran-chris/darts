@@ -3,11 +3,12 @@ from selenium import webdriver
 import requests
 import time 
 from templates import * 
+from config import *
 
-driver = webdriver.Chrome('/home/chris/darts/chromedriver')
-url = 'http://127.0.0.1:5000/'
+#driver = webdriver.Chrome('/home/chris/darts/chromedriver')
+#url = 'http://127.0.0.1:5000/'
 display_dict = {'301':{2:twoPlayer301Display}}
-display_file = 'file:///home/chris/darts/display.html'
+#display_file = 'file:///home/chris/darts/display.html'
 game_select_dict = {1:'301',
                     2:'Cricket'}
 

@@ -27,7 +27,7 @@ class Scoreboard():
         return scores 
     
     def create_cricket_scores(self):
-        index = ['15','16','17','18','19','20','Bull','Score']
+        index = ['15','16','17','18','19','20','25','Score']
         columns = [player for player in range(1,self.player_count+1)]
         scores = pd.DataFrame(np.zeros([8,self.player_count]),dtype=int,index = index, columns = columns)
         if self.game_type == '301':
