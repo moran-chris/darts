@@ -7,7 +7,8 @@ from config import *
 
 #driver = webdriver.Chrome('/home/chris/darts/chromedriver')
 #url = 'http://127.0.0.1:5000/'
-display_dict = {'301':{2:twoPlayer301Display}}
+display_dict = {'301':{2:twoPlayer301Display},
+                'Cricket': {2:twoPlayerCricketDisplay}}
 #display_file = 'file:///home/chris/darts/display.html'
 game_select_dict = {1:'301',
                     2:'Cricket'}
@@ -51,7 +52,7 @@ def update_score(score):
     if dart == 777:
         score.undo()
         playgame(score = score)
-    score.update_score_301(dart)
+    score.update_score(dart)
     playgame(score = score)
 
 def playgame(score):
