@@ -4,9 +4,37 @@ import requests
 import time 
 from templates import * 
 from config import *
+import keyinput
 
+
+log = keyinput.KeyInput()
 #driver = webdriver.Chrome('/home/chris/darts/chromedriver')
 #url = 'http://127.0.0.1:5000/'
+input_dict = {'a':1,
+              'b':2,
+              'c':3,
+              'd':4,
+              'e':5,
+              'f':6,
+              'g':7,
+              'h':8,
+              'i':9,
+              'j':10,
+              'k':11,
+              'l':12,
+              'm':13,
+              'n':14,
+              'o':15,
+              'p':16,
+              'q':17,
+              'r':18,
+              's':19,
+              't':20,
+              'u':25,
+              'v':999,
+              'w':888,
+              'x':777
+              }
 display_dict = {'301':{2:twoPlayer301Display},
                 'Cricket': {2:twoPlayerCricketDisplay}}
 #display_file = 'file:///home/chris/darts/display.html'
@@ -15,9 +43,11 @@ game_select_dict = {1:'301',
 
 def start_game():
     display(game_select_display)
-    game = game_select_dict[int(input())]
+    log.grab_keystroke()
+    game = game_select_dict[input_dict[log.key_stroke]]
     display(player_count_display)
-    player_count = int(input())
+    log.grab_keystroke()
+    player_count = input_dict[log.key_stroke]
     return game,player_count
 
 def display(html):
@@ -43,7 +73,8 @@ def display_score(score):
 
 def update_score(score):
     
-    dart = int(input("Enter Score: "))
+    log.grab_keystroke()
+    dart = input_dict[log.key_stroke]
     if dart == 999:
         return main()
     if dart == 888:
